@@ -1,0 +1,70 @@
+.overlay{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: rgba(0, 0, 0, 0.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective: 1500px;
+  z-index:1000;
+}
+
+.modal{
+  background: #fff;
+  position:relative;
+  overflow-y:scroll;
+  width:100%;
+  background:#fff;
+  max-height:80vh;
+  position:relative;
+  padding:padding;
+  overflow-x:hidden;
+  overflow-y:scroll;
+  transform-style: preserve-3d;
+  animation: flipInHorizontal 0.3s ease-in forwards;
+}
+
+.modal::-webkit-scrollbar {
+  width:0px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes fromDown{
+  from{
+    transform:translateY(50px);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes flipInVertical{
+  from{
+    transform:rotateX(25deg);
+    opacity:0.5;
+  }
+  to{
+    transform:rotateX(0);
+    opacity:1;
+  }
+}
+
+@keyframes flipInHorizontal{
+  from{
+    transform:rotateY(40deg);
+    opacity:0.5;
+  }
+  to{
+    transform:rotateY(0);
+    opacity:1;
+  }
+}

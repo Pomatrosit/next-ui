@@ -1,65 +1,26 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Modal from "../components/NextModal/NextModal";
+import {useState} from "react";
 
 export default function Home() {
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>
+      <button onClick = {() => setModalOpen(true)}>Open Modal</button>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      { isModalOpen &&
+        <Modal css={{padding:"20px", maxWidth:"300px"}}
+               setModalOpen={setModalOpen}
+               >
+         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint fugiat reiciendis, necessitatibus cumque, assumenda laudantium inventore modi, a voluptatem, aspernatur est. Reprehenderit aut, nam suscipit ratione totam recusandae inventore!</div>
+         <div>Quibusdam omnis, laudantium ad molestias assumenda provident, itaque molestiae sed est tempora dolor repellat. Architecto eum, aperiam nemo corporis libero dolorem minima rem ab hic cupiditate esse, quibusdam praesentium ex.</div>
+         <div>Placeat dolorem, nam laudantium, illum sequi enim maxime doloribus! Eveniet nemo laboriosam quam, neque aspernatur eligendi unde inventore quaerat quibusdam voluptates molestiae ratione veritatis ullam. Ad non, porro dolores quis.</div>
+         <div>Odio ad iure illum voluptatum vitae eius sit, deleniti. In fugit hic minus commodi, quisquam nam facilis vitae sed, optio dolores praesentium ipsum. Veritatis sed ad id, alias quam illo.</div>
+         <div>Maxime nemo, earum vitae eos deserunt consequuntur dolor accusantium esse odit ab veritatis, eligendi totam distinctio aliquid ullam deleniti quisquam! Quis reiciendis, rem reprehenderit nam magni, laudantium aut neque asperiores.</div>
+      </Modal>
+      }
     </div>
   )
 }
