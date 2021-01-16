@@ -28,7 +28,12 @@
 }
 
 .modal::-webkit-scrollbar {
-  width:0px;
+    width: 4px; /* ширина для вертикального скролла */
+    background-color: #fff;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: #492A64;
 }
 
 @keyframes fadeIn{
@@ -66,5 +71,11 @@
   to{
     transform:rotateY(0);
     opacity:1;
+  }
+}
+
+@media screen and (max-width:768px){
+  .overlay{
+    align-items: flex-end;
   }
 }

@@ -1,6 +1,5 @@
 import style from "./NextForm.module.css";
 import {useState, useRef} from "react";
-import PhoneInput from 'react-phone-number-input';
 import InputErrorIcon from "./errorIcon";
 import InputSuccessIcon from "./successIcon";
 import Loader from "./loader";
@@ -92,6 +91,7 @@ const NextForm = ({css, title}) => {
 
                <div className={style.inputWrapper}>
                    <input
+
                      style={{border:`1px solid ${borderNameColor}`}}
                      placeholder="Введите имя"
                      type="text"
@@ -171,8 +171,6 @@ const NextForm = ({css, title}) => {
                      </div>
                      : <Loader margin="0 auto" color="#04DEC5"/>
                 }
-
-
 
            </div>
 
